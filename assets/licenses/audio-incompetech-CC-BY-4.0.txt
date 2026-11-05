@@ -1,0 +1,29 @@
+Music by Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/  (legal code: https://creativecommons.org/licenses/by/4.0/legalcode)
+
+Credits (format requested by https://incompetech.com/music/royalty-free/faq.html):
+
+"Monkeys Spinning Monkeys" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+"Sneaky Snitch" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+"Run Amok" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+"Carefree" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+Changes made for this game (CC BY 4.0, section 3(a)(1)(B)): each piece was trimmed to a section of
+the original recording and made into a seamless loop (short cross-fade at the loop seam), then
+loudness-normalised, peak-limited and re-encoded as MP3 by tools/audio/build_audio.py. The
+compositions and recordings are otherwise unchanged. Per-file details (source URL, ISRC, loop
+points, processing): game/assets/audio/AUDIO-SOURCES.json.
+In the game the credit is shown at the bottom of the Settings panel.
+No endorsement by the author or the licensor is implied.

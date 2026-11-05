@@ -1,0 +1,18 @@
+Free Fantasy SFX Pack (a.k.a. "Free Fantasy 200 SFX Pack") by TomMusic
+Author:  TomMusic - https://tommusic.itch.io/  (tom.gamemusic@gmail.com)
+Source:  https://tommusic.itch.io/free-fantasy-200-sfx-pack
+Local copy used by the build: LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/
+
+Terms of use as published on the pack's itch.io page (checked 2026-10-06):
+  - Royalty-free: the sounds may be used in your projects, commercial or otherwise.
+  - Credit is not mandatory but appreciated.
+  - The asset itself must not be put up for resale or redistribution
+    (i.e. do not sell or share the raw sound pack; shipping the sounds inside a game is allowed).
+
+Credit: Sound effects by TomMusic (https://tommusic.itch.io/).
+
+Files of this pack used in Steal a Dragon Egg (processed/mixed into the game's own SFX, see
+game/assets/audio/AUDIO-SOURCES.json for the exact layers):
+  SFX/Spells/Fireball 1.ogg, Spell Impact 1.ogg, Rock Meteor Throw 2.ogg, Ice Barrage 2.ogg,
+  Ice Freeze 1.ogg, Firespray 1.ogg; SFX/Torch/Torch Impact 2.ogg;
+  SFX/Doors Gates and Chests/Lock Unlock.ogg, Chest Open 1.ogg; SFX/Footsteps/Dirt/Dirt Land.ogg

@@ -1,0 +1,1736 @@
+{
+  "generatedBy": "tools/audio/build_audio.py",
+  "format": {
+    "sfx": "mp3 mono 44.1 kHz CBR 112 kbps",
+    "music": "mp3 stereo 44.1 kHz CBR 128 kbps"
+  },
+  "note": "source/author/licence list every layer of a file in order, separated by \" | \"; \"layers\" has the details. Music files are laid out [0.5 s pre-pad | loop | 0.5 s post-pad]; loop times are seconds inside the file.",
+  "files": [
+    {
+      "key": "click",
+      "file": "sfx/click.mp3",
+      "source": "https://kenney.nl/assets/ui-pack",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Soft, short plastic-wood button click.",
+      "layers": [
+        {
+          "title": "Kenney ui-pack: click-a.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/ui-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/ui-pack/Sounds/click-a.ogg"
+        }
+      ],
+      "durationSec": 0.13,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -24.7
+    },
+    {
+      "key": "pop",
+      "file": "sfx/pop.mp3",
+      "source": "https://kenney.nl/assets/interface-sounds | https://kenney.nl/assets/ui-pack",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Round bubbly \"bloop\" pop with a tiny tap - panels and toasts appearing.",
+      "layers": [
+        {
+          "title": "Kenney interface-sounds: drop_002.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/interface-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/interface-sounds/Audio/drop_002.ogg"
+        },
+        {
+          "title": "Kenney ui-pack: tap-b.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/ui-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/ui-pack/Sounds/tap-b.ogg"
+        }
+      ],
+      "durationSec": 0.128,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -22.2
+    },
+    {
+      "key": "close",
+      "file": "sfx/close.mp3",
+      "source": "https://kenney.nl/assets/rpg-audio",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Leather-bound book closing - a soft papery thump (panel close).",
+      "layers": [
+        {
+          "title": "Kenney rpg-audio: bookClose.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/bookClose.ogg"
+        }
+      ],
+      "durationSec": 0.178,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -24.6
+    },
+    {
+      "key": "tab",
+      "file": "sfx/tab.mp3",
+      "source": "https://kenney.nl/assets/rpg-audio",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Quick parchment page flip (switching tabs).",
+      "layers": [
+        {
+          "title": "Kenney rpg-audio: bookFlip2.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/bookFlip2.ogg"
+        }
+      ],
+      "durationSec": 0.32,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -22.7
+    },
+    {
+      "key": "error",
+      "file": "sfx/error.mp3",
+      "source": "tools/audio/synth.py | https://kenney.nl/assets/ui-pack",
+      "author": "Steal a Dragon Egg project | Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Friendly low wooden \"bonk-bonk\" (two descending marimba notes): not allowed / cannot afford.",
+      "layers": [
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "marimba notes E4 -> C4"
+        },
+        {
+          "title": "Kenney ui-pack: tap-a.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/ui-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/ui-pack/Sounds/tap-a.ogg"
+        }
+      ],
+      "durationSec": 0.48,
+      "peakDb": -8.67,
+      "loudnessMaxLufsM": -18.0
+    },
+    {
+      "key": "toggle",
+      "file": "sfx/toggle.mp3",
+      "source": "https://kenney.nl/assets/ui-pack",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Small mechanical switch click (settings toggle).",
+      "layers": [
+        {
+          "title": "Kenney ui-pack: switch-b.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/ui-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/ui-pack/Sounds/switch-b.ogg"
+        }
+      ],
+      "durationSec": 0.105,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -26.7
+    },
+    {
+      "key": "coin",
+      "file": "sfx/coin.mp3",
+      "source": "https://freesound.org/people/LeMudCrab/sounds/163451/ | https://freesound.org/people/steffcaffrey/sounds/452379/ | tools/audio/synth.py",
+      "author": "LeMudCrab (freesound.org) | steffcaffrey (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Bright little coin clink with a high bell \"ting\" (money pickup / income pop).",
+      "layers": [
+        {
+          "title": "Freesound #163451 \"Money Pickup\" by LeMudCrab",
+          "author": "LeMudCrab (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/LeMudCrab/sounds/163451/",
+          "file": "https://cdn.freesound.org/previews/163/163451_2263027-hq.ogg"
+        },
+        {
+          "title": "Freesound #452379 \"Small Bell #2\" by steffcaffrey",
+          "author": "steffcaffrey (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/steffcaffrey/sounds/452379/",
+          "file": "https://cdn.freesound.org/previews/452/452379_1844073-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "bell B6"
+        }
+      ],
+      "durationSec": 0.31,
+      "peakDb": -2.05,
+      "loudnessMaxLufsM": -19.0
+    },
+    {
+      "key": "gem",
+      "file": "sfx/gem.mp3",
+      "source": "https://kenney.nl/assets/interface-sounds | https://freesound.org/people/LilMati/sounds/659677/ | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | LilMati (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Crystalline glass \"ting\" with a quick sparkle shimmer (gem gained).",
+      "layers": [
+        {
+          "title": "Kenney interface-sounds: glass_004.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/interface-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/interface-sounds/Audio/glass_004.ogg"
+        },
+        {
+          "title": "Freesound #659677 \"Shiny Object of Value - Rare Loot Find\" by LilMati",
+          "author": "LilMati (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/LilMati/sounds/659677/",
+          "file": "https://cdn.freesound.org/previews/659/659677_6142149-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "glitter + B6/E7 bells"
+        }
+      ],
+      "durationSec": 0.742,
+      "peakDb": -8.69,
+      "loudnessMaxLufsM": -17.0
+    },
+    {
+      "key": "buy",
+      "file": "sfx/buy.mp3",
+      "source": "https://kenney.nl/assets/rpg-audio | https://freesound.org/people/LeMudCrab/sounds/163451/ | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | LeMudCrab (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Coins handed over + a cheerful two-bell \"ching-ching\" (purchase).",
+      "layers": [
+        {
+          "title": "Kenney rpg-audio: handleCoins.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/handleCoins.ogg"
+        },
+        {
+          "title": "Freesound #163451 \"Money Pickup\" by LeMudCrab",
+          "author": "LeMudCrab (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/LeMudCrab/sounds/163451/",
+          "file": "https://cdn.freesound.org/previews/163/163451_2263027-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "bells G6 + C7"
+        }
+      ],
+      "durationSec": 0.953,
+      "peakDb": -4.48,
+      "loudnessMaxLufsM": -15.0
+    },
+    {
+      "key": "sell",
+      "file": "sfx/sell.mp3",
+      "source": "https://freesound.org/people/Zott820/sounds/209578/ | https://kenney.nl/assets/rpg-audio",
+      "author": "Zott820 (freesound.org) | Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Old cash register \"ka-ching\" with coin rattle (dragons sold).",
+      "layers": [
+        {
+          "title": "Freesound #209578 \"Cash Register Purchase\" by Zott820",
+          "author": "Zott820 (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Zott820/sounds/209578/",
+          "file": "https://cdn.freesound.org/previews/209/209578_2558531-hq.ogg"
+        },
+        {
+          "title": "Kenney rpg-audio: handleCoins2.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/handleCoins2.ogg"
+        }
+      ],
+      "durationSec": 1.3,
+      "peakDb": -1.69,
+      "loudnessMaxLufsM": -15.0
+    },
+    {
+      "key": "equip",
+      "file": "sfx/equip.mp3",
+      "source": "https://kenney.nl/assets/rpg-audio | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Metal latch click followed by a soft rising sparkle (equip item / dragon).",
+      "layers": [
+        {
+          "title": "Kenney rpg-audio: metalLatch.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/metalLatch.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "rising glitter + bells"
+        }
+      ],
+      "durationSec": 0.703,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -17.6
+    },
+    {
+      "key": "reward",
+      "file": "sfx/reward.mp3",
+      "source": "https://freesound.org/people/SkySpeira/sounds/715067/ | tools/audio/synth.py",
+      "author": "SkySpeira (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Magical \"achievement\" sparkle with a rising C-major bell arpeggio (reward granted).",
+      "layers": [
+        {
+          "title": "Freesound #715067 \"achievement-sparkle\" by SkySpeira",
+          "author": "SkySpeira (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/SkySpeira/sounds/715067/",
+          "file": "https://cdn.freesound.org/previews/715/715067_7155498-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "bell arpeggio C6-E6-G6-C7 + glitter"
+        }
+      ],
+      "durationSec": 1.343,
+      "peakDb": -2.98,
+      "loudnessMaxLufsM": -14.0
+    },
+    {
+      "key": "unlock",
+      "file": "sfx/unlock.mp3",
+      "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://freesound.org/people/newagesoup/sounds/351408/ | tools/audio/synth.py",
+      "author": "TomMusic (tommusic.itch.io) | newagesoup (freesound.org) | Steal a Dragon Egg project",
+      "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself) | CC0-1.0",
+      "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Key turning in an iron lock, then a bright magical rising chime (gate / hatchery unlocked).",
+      "layers": [
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Doors Gates and Chests/Lock Unlock.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Doors Gates and Chests/Lock Unlock.ogg"
+        },
+        {
+          "title": "Freesound #351408 \"GLEAM-GLOW-SFX-CHIME.wav\" by newagesoup",
+          "author": "newagesoup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/newagesoup/sounds/351408/",
+          "file": "https://cdn.freesound.org/previews/351/351408_4067257-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "bell arpeggio G5-C6-E6-G6"
+        }
+      ],
+      "durationSec": 2.341,
+      "peakDb": -1.57,
+      "loudnessMaxLufsM": -14.0
+    },
+    {
+      "key": "levelup",
+      "file": "sfx/levelup.mp3",
+      "source": "https://freesound.org/people/qubodup/sounds/442943/ | tools/audio/synth.py",
+      "author": "qubodup (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Synth level-up arpeggio rising with a glittery tail (treadmill upgrade / level up).",
+      "layers": [
+        {
+          "title": "Freesound #442943 \"Level Up\" by qubodup",
+          "author": "qubodup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/qubodup/sounds/442943/",
+          "file": "https://cdn.freesound.org/previews/442/442943_71257-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "rising glitter"
+        }
+      ],
+      "durationSec": 1.709,
+      "peakDb": -2.08,
+      "loudnessMaxLufsM": -13.0
+    },
+    {
+      "key": "ad_reward",
+      "file": "sfx/ad_reward.mp3",
+      "source": "https://freesound.org/people/jimhancock/sounds/376318/ | https://freesound.org/people/LeMudCrab/sounds/163451/ | https://kenney.nl/assets/rpg-audio | tools/audio/synth.py",
+      "author": "jimhancock (freesound.org) | LeMudCrab (freesound.org) | Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Big brass \"TaDa!\" with coins and sparkles (rewarded ad granted).",
+      "layers": [
+        {
+          "title": "Freesound #376318 \"TaDa!.wav\" by jimhancock",
+          "author": "jimhancock (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/jimhancock/sounds/376318/",
+          "file": "https://cdn.freesound.org/previews/376/376318_375016-hq.ogg"
+        },
+        {
+          "title": "Freesound #163451 \"Money Pickup\" by LeMudCrab",
+          "author": "LeMudCrab (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/LeMudCrab/sounds/163451/",
+          "file": "https://cdn.freesound.org/previews/163/163451_2263027-hq.ogg"
+        },
+        {
+          "title": "Kenney rpg-audio: handleCoins.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/handleCoins.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "glitter"
+        }
+      ],
+      "durationSec": 2.492,
+      "peakDb": -2.01,
+      "loudnessMaxLufsM": -13.0
+    },
+    {
+      "key": "wheel_tick",
+      "file": "sfx/wheel_tick.mp3",
+      "source": "https://kenney.nl/assets/ui-pack | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Very short plastic ticker click (wheel peg passing the pointer).",
+      "layers": [
+        {
+          "title": "Kenney ui-pack: tap-a.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/ui-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/ui-pack/Sounds/tap-a.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "high tick"
+        }
+      ],
+      "durationSec": 0.06,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -24.5
+    },
+    {
+      "key": "wheel_win",
+      "file": "sfx/wheel_win.mp3",
+      "source": "https://kenney.nl/assets/music-jingles | https://freesound.org/people/LeMudCrab/sounds/163451/ | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | LeMudCrab (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Steel-drum rising \"da-da-da-DING\" with coins and sparkles (wheel prize).",
+      "layers": [
+        {
+          "title": "Kenney music-jingles: jingles_STEEL10.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/music-jingles",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/music-jingles/Audio/Steel jingles/jingles_STEEL10.ogg"
+        },
+        {
+          "title": "Freesound #163451 \"Money Pickup\" by LeMudCrab",
+          "author": "LeMudCrab (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/LeMudCrab/sounds/163451/",
+          "file": "https://cdn.freesound.org/previews/163/163451_2263027-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "glitter + bell G6"
+        }
+      ],
+      "durationSec": 1.495,
+      "peakDb": -1.58,
+      "loudnessMaxLufsM": -14.0
+    },
+    {
+      "key": "gift_open",
+      "file": "sfx/gift_open.mp3",
+      "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://freesound.org/people/newagesoup/sounds/351408/ | https://kenney.nl/assets/music-jingles | tools/audio/synth.py",
+      "author": "TomMusic (tommusic.itch.io) | newagesoup (freesound.org) | Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself) | CC0-1.0",
+      "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Wooden chest lid creaks open, magical gleam swells out with a rising pizzicato (daily gift).",
+      "layers": [
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Doors Gates and Chests/Chest Open 1.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Doors Gates and Chests/Chest Open 1.ogg"
+        },
+        {
+          "title": "Freesound #351408 \"GLEAM-GLOW-SFX-CHIME.wav\" by newagesoup",
+          "author": "newagesoup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/newagesoup/sounds/351408/",
+          "file": "https://cdn.freesound.org/previews/351/351408_4067257-hq.ogg"
+        },
+        {
+          "title": "Kenney music-jingles: jingles_PIZZI02.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/music-jingles",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/music-jingles/Audio/Pizzicato jingles/jingles_PIZZI02.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "glitter"
+        }
+      ],
+      "durationSec": 2.386,
+      "peakDb": -1.51,
+      "loudnessMaxLufsM": -14.0
+    },
+    {
+      "key": "step1",
+      "file": "sfx/step1.mp3",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Grass footstep variation 1 (soft crunch).",
+      "layers": [
+        {
+          "title": "Kenney impact-sounds: footstep_grass_000.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/footstep_grass_000.ogg"
+        }
+      ],
+      "durationSec": 0.179,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -26.8
+    },
+    {
+      "key": "step2",
+      "file": "sfx/step2.mp3",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Grass footstep variation 2 (soft crunch).",
+      "layers": [
+        {
+          "title": "Kenney impact-sounds: footstep_grass_001.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/footstep_grass_001.ogg"
+        }
+      ],
+      "durationSec": 0.167,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -24.9
+    },
+    {
+      "key": "step3",
+      "file": "sfx/step3.mp3",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Grass footstep variation 3 (soft crunch).",
+      "layers": [
+        {
+          "title": "Kenney impact-sounds: footstep_grass_002.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/footstep_grass_002.ogg"
+        }
+      ],
+      "durationSec": 0.171,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -25.4
+    },
+    {
+      "key": "step4",
+      "file": "sfx/step4.mp3",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Grass footstep variation 4 (soft crunch).",
+      "layers": [
+        {
+          "title": "Kenney impact-sounds: footstep_grass_003.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/footstep_grass_003.ogg"
+        }
+      ],
+      "durationSec": 0.155,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -27.0
+    },
+    {
+      "key": "jump",
+      "file": "sfx/jump.mp3",
+      "source": "https://freesound.org/people/qubodup/sounds/60013/ | https://kenney.nl/assets/rpg-audio | https://kenney.nl/assets/impact-sounds",
+      "author": "qubodup (freesound.org) | Kenney (www.kenney.nl)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Quick cloth swish with a soft grass push-off (jump).",
+      "layers": [
+        {
+          "title": "Freesound #60013 \"Whoosh\" by qubodup",
+          "author": "qubodup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/qubodup/sounds/60013/",
+          "file": "https://cdn.freesound.org/previews/60/60013_71257-hq.ogg"
+        },
+        {
+          "title": "Kenney rpg-audio: cloth1.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/cloth1.ogg"
+        },
+        {
+          "title": "Kenney impact-sounds: footstep_grass_004.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/footstep_grass_004.ogg"
+        }
+      ],
+      "durationSec": 0.466,
+      "peakDb": -5.53,
+      "loudnessMaxLufsM": -21.0
+    },
+    {
+      "key": "land",
+      "file": "sfx/land.mp3",
+      "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://kenney.nl/assets/impact-sounds | https://kenney.nl/assets/impact-sounds",
+      "author": "TomMusic (tommusic.itch.io) | Kenney (www.kenney.nl)",
+      "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself) | CC0-1.0",
+      "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Soft thud landing on grass and dirt.",
+      "layers": [
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Footsteps/Dirt/Dirt Land.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Footsteps/Dirt/Dirt Land.ogg"
+        },
+        {
+          "title": "Kenney impact-sounds: impactSoft_heavy_000.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/impactSoft_heavy_000.ogg"
+        },
+        {
+          "title": "Kenney impact-sounds: footstep_grass_002.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/footstep_grass_002.ogg"
+        }
+      ],
+      "durationSec": 0.448,
+      "peakDb": -2.08,
+      "loudnessMaxLufsM": -20.0
+    },
+    {
+      "key": "whoosh",
+      "file": "sfx/whoosh.mp3",
+      "source": "https://freesound.org/people/Halgrimm/sounds/169867/ | tools/audio/synth.py",
+      "author": "Halgrimm (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Smooth airy swoosh (UI / camera / fast movement).",
+      "layers": [
+        {
+          "title": "Freesound #169867 \"swoosh\" by Halgrimm",
+          "author": "Halgrimm (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Halgrimm/sounds/169867/",
+          "file": "https://cdn.freesound.org/previews/169/169867_2834921-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "noise whoosh sweep"
+        }
+      ],
+      "durationSec": 0.773,
+      "peakDb": -6.62,
+      "loudnessMaxLufsM": -19.0
+    },
+    {
+      "key": "dash",
+      "file": "sfx/dash.mp3",
+      "source": "https://freesound.org/people/shatterstars/sounds/572216/ | https://freesound.org/people/qubodup/sounds/60013/ | https://freesound.org/people/snowflakes/sounds/72190/",
+      "author": "shatterstars (freesound.org) | qubodup (freesound.org) | snowflakes (freesound.org)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Dragon dash: a strong wing beat and a sharp low whoosh.",
+      "layers": [
+        {
+          "title": "Freesound #572216 \"Giant Wings Flapping.mp3\" by shatterstars",
+          "author": "shatterstars (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/shatterstars/sounds/572216/",
+          "file": "https://cdn.freesound.org/previews/572/572216_5186268-hq.ogg"
+        },
+        {
+          "title": "Freesound #60013 \"Whoosh\" by qubodup",
+          "author": "qubodup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/qubodup/sounds/60013/",
+          "file": "https://cdn.freesound.org/previews/60/60013_71257-hq.ogg"
+        },
+        {
+          "title": "Freesound #72190 \"whip02.wav\" by snowflakes",
+          "author": "snowflakes (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/snowflakes/sounds/72190/",
+          "file": "https://cdn.freesound.org/previews/72/72190_1070711-hq.ogg"
+        }
+      ],
+      "durationSec": 0.487,
+      "peakDb": -1.14,
+      "loudnessMaxLufsM": -16.0
+    },
+    {
+      "key": "egg_pickup",
+      "file": "sfx/egg_pickup.mp3",
+      "source": "https://kenney.nl/assets/rpg-audio | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Hands grab the egg + an upward magical shimmer and two bells (egg stolen).",
+      "layers": [
+        {
+          "title": "Kenney rpg-audio: cloth3.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/cloth3.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "shimmer rise + bells C6/G6 + glitter"
+        }
+      ],
+      "durationSec": 0.998,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -15.1
+    },
+    {
+      "key": "egg_place",
+      "file": "sfx/egg_place.mp3",
+      "source": "https://kenney.nl/assets/impact-sounds | https://kenney.nl/assets/rpg-audio | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Egg set down into a straw nest: soft thump, straw rustle, a gentle bell.",
+      "layers": [
+        {
+          "title": "Kenney impact-sounds: impactSoft_medium_001.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/impactSoft_medium_001.ogg"
+        },
+        {
+          "title": "Kenney rpg-audio: cloth2.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/rpg-audio",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/rpg-audio/Audio/cloth2.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "bell G5"
+        }
+      ],
+      "durationSec": 0.933,
+      "peakDb": -1.63,
+      "loudnessMaxLufsM": -17.0
+    },
+    {
+      "key": "crack",
+      "file": "sfx/crack.mp3",
+      "source": "https://freesound.org/people/davdud101/sounds/150479/ | https://freesound.org/people/Reitanna/sounds/244735/",
+      "author": "davdud101 (freesound.org) | Reitanna (freesound.org)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Crisp eggshell crack with a few crunchy shell bits (egg starts to hatch).",
+      "layers": [
+        {
+          "title": "Freesound #150479 \"Egg Crack\" by davdud101",
+          "author": "davdud101 (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/davdud101/sounds/150479/",
+          "file": "https://cdn.freesound.org/previews/150/150479_1883289-hq.ogg"
+        },
+        {
+          "title": "Freesound #244735 \"egg crack4.wav\" by Reitanna",
+          "author": "Reitanna (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Reitanna/sounds/244735/",
+          "file": "https://cdn.freesound.org/previews/244/244735_950925-hq.ogg"
+        }
+      ],
+      "durationSec": 0.41,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -19.2
+    },
+    {
+      "key": "hatch",
+      "file": "sfx/hatch.mp3",
+      "source": "https://freesound.org/people/FngerSounds/sounds/250133/ | https://kenney.nl/assets/interface-sounds | https://opengameart.org/content/80-cc0-creature-sfx | tools/audio/synth.py",
+      "author": "FngerSounds (freesound.org) | Kenney (www.kenney.nl) | rubberduck (opengameart.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Shell bursts open with a pop, a sparkle burst, a bell chord and the baby dragon's first chirp.",
+      "layers": [
+        {
+          "title": "Freesound #250133 \"Egg cracking.wav\" by FngerSounds",
+          "author": "FngerSounds (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/FngerSounds/sounds/250133/",
+          "file": "https://cdn.freesound.org/previews/250/250133_4149794-hq.ogg"
+        },
+        {
+          "title": "Kenney interface-sounds: drop_003.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/interface-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/interface-sounds/Audio/drop_003.ogg"
+        },
+        {
+          "title": "80 CC0 creature SFX: cute_04.ogg",
+          "author": "rubberduck (opengameart.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-opengameart-cc0.txt",
+          "source": "https://opengameart.org/content/80-cc0-creature-sfx",
+          "file": "https://opengameart.org/sites/default/files/80-CC0-creature-SFX_0.zip -> cute_04.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "glitter burst + bell chord C6/E6/G6"
+        }
+      ],
+      "durationSec": 1.314,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -13.1
+    },
+    {
+      "key": "baby_chirp",
+      "file": "sfx/baby_chirp.mp3",
+      "source": "https://opengameart.org/content/80-cc0-creature-sfx | https://freesound.org/people/SieuAmThanh/sounds/401257/",
+      "author": "rubberduck (opengameart.org) | SieuAmThanh (freesound.org)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Tiny cute dragon chirp - a squeaky two-syllable trill.",
+      "layers": [
+        {
+          "title": "80 CC0 creature SFX: cute_05.ogg",
+          "author": "rubberduck (opengameart.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-opengameart-cc0.txt",
+          "source": "https://opengameart.org/content/80-cc0-creature-sfx",
+          "file": "https://opengameart.org/sites/default/files/80-CC0-creature-SFX_0.zip -> cute_05.ogg"
+        },
+        {
+          "title": "Freesound #401257 \"Dinosaur 0 - Khung Long 0.wav\" by SieuAmThanh",
+          "author": "SieuAmThanh (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/SieuAmThanh/sounds/401257/",
+          "file": "https://cdn.freesound.org/previews/401/401257_7554526-hq.ogg"
+        }
+      ],
+      "durationSec": 0.369,
+      "peakDb": -3.09,
+      "loudnessMaxLufsM": -16.0
+    },
+    {
+      "key": "collect",
+      "file": "sfx/collect.mp3",
+      "source": "https://freesound.org/people/colorsCrimsonTears/sounds/562292/ | tools/audio/synth.py",
+      "author": "colorsCrimsonTears (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Magical \"heal\"-style bell arpeggio with sparkles (baby dragon collected).",
+      "layers": [
+        {
+          "title": "Freesound #562292 \"Heal - Rpg\" by colorsCrimsonTears",
+          "author": "colorsCrimsonTears (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/colorsCrimsonTears/sounds/562292/",
+          "file": "https://cdn.freesound.org/previews/562/562292_11785387-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "glitter"
+        }
+      ],
+      "durationSec": 1.25,
+      "peakDb": -10.42,
+      "loudnessMaxLufsM": -15.0
+    },
+    {
+      "key": "roar_big",
+      "file": "sfx/roar_big.mp3",
+      "source": "https://freesound.org/people/CaveboyTup/sounds/529462/ | https://freesound.org/people/Breviceps/sounds/479380/ | https://freesound.org/people/GojiS.O.S./sounds/412940/ | tools/audio/synth.py",
+      "author": "CaveboyTup (freesound.org) | Breviceps (freesound.org) | GojiS.O.S. (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Huge guardian dragon roar: snarling noisy attack opening into a long, deep tonal bellow with a growl texture, a sub thump and a cave reverb tail (~3.5 s).",
+      "layers": [
+        {
+          "title": "Freesound #529462 \"T-Rex Calls\" by CaveboyTup",
+          "author": "CaveboyTup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/CaveboyTup/sounds/529462/",
+          "file": "https://cdn.freesound.org/previews/529/529462_4355850-hq.ogg",
+          "part": "bellow 0:37-0:41"
+        },
+        {
+          "title": "Freesound #479380 \"Dragon: Several roars, growls and snarls\" by Breviceps",
+          "author": "Breviceps (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Breviceps/sounds/479380/",
+          "file": "https://cdn.freesound.org/previews/479/479380_9159316-hq.ogg",
+          "part": "growl 0:41-0:44"
+        },
+        {
+          "title": "Freesound #412940 \"Dinosaur Roars and Growls.mp3\" by GojiS.O.S.",
+          "author": "GojiS.O.S. (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/GojiS.O.S./sounds/412940/",
+          "file": "https://cdn.freesound.org/previews/412/412940_8082376-hq.ogg",
+          "part": "roar onset 1:40"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "sub thump at the attack"
+        }
+      ],
+      "durationSec": 4.234,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -10.3
+    },
+    {
+      "key": "roar_small",
+      "file": "sfx/roar_small.mp3",
+      "source": "https://freesound.org/people/Breviceps/sounds/479380/ | https://freesound.org/people/GojiS.O.S./sounds/412940/",
+      "author": "Breviceps (freesound.org) | GojiS.O.S. (freesound.org)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Young drake roar: a shorter, higher snarling screech.",
+      "layers": [
+        {
+          "title": "Freesound #479380 \"Dragon: Several roars, growls and snarls\" by Breviceps",
+          "author": "Breviceps (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Breviceps/sounds/479380/",
+          "file": "https://cdn.freesound.org/previews/479/479380_9159316-hq.ogg",
+          "part": "snarl 0:08"
+        },
+        {
+          "title": "Freesound #412940 \"Dinosaur Roars and Growls.mp3\" by GojiS.O.S.",
+          "author": "GojiS.O.S. (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/GojiS.O.S./sounds/412940/",
+          "file": "https://cdn.freesound.org/previews/412/412940_8082376-hq.ogg",
+          "part": "roar onset 1:40"
+        }
+      ],
+      "durationSec": 1.897,
+      "peakDb": -1.2,
+      "loudnessMaxLufsM": -12.0
+    },
+    {
+      "key": "stir",
+      "file": "sfx/stir.mp3",
+      "source": "https://freesound.org/people/Breviceps/sounds/479380/ | https://freesound.org/people/CaveboyTup/sounds/529462/ | tools/audio/synth.py",
+      "author": "Breviceps (freesound.org) | CaveboyTup (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Dragon waking up: a low rumbling growl with a snort.",
+      "layers": [
+        {
+          "title": "Freesound #479380 \"Dragon: Several roars, growls and snarls\" by Breviceps",
+          "author": "Breviceps (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Breviceps/sounds/479380/",
+          "file": "https://cdn.freesound.org/previews/479/479380_9159316-hq.ogg",
+          "part": "growl 0:52"
+        },
+        {
+          "title": "Freesound #529462 \"T-Rex Calls\" by CaveboyTup",
+          "author": "CaveboyTup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/CaveboyTup/sounds/529462/",
+          "file": "https://cdn.freesound.org/previews/529/529462_4355850-hq.ogg",
+          "part": "low call 0:16"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "snort puff"
+        }
+      ],
+      "durationSec": 2.273,
+      "peakDb": -2.47,
+      "loudnessMaxLufsM": -14.0
+    },
+    {
+      "key": "snore",
+      "file": "sfx/snore.mp3",
+      "source": "https://opengameart.org/content/80-cc0-creture-sfx-2 | tools/audio/synth.py | https://opengameart.org/content/80-cc0-creature-sfx",
+      "author": "rubberduck (opengameart.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Big sleeping dragon snore: rumbling fluttery inhale, then a slow airy exhale (~2.3 s).",
+      "layers": [
+        {
+          "title": "80 CC0 creature SFX #2: snore_02.ogg",
+          "author": "rubberduck (opengameart.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-opengameart-cc0.txt",
+          "source": "https://opengameart.org/content/80-cc0-creture-sfx-2",
+          "file": "https://opengameart.org/sites/default/files/80-CC0-creature-sfx-2.zip -> snore_02.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "flutter rumble + exhale puff"
+        },
+        {
+          "title": "80 CC0 creature SFX: breath.ogg",
+          "author": "rubberduck (opengameart.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-opengameart-cc0.txt",
+          "source": "https://opengameart.org/content/80-cc0-creature-sfx",
+          "file": "https://opengameart.org/sites/default/files/80-CC0-creature-SFX_0.zip -> breath.ogg"
+        }
+      ],
+      "durationSec": 2.3,
+      "peakDb": -2.81,
+      "loudnessMaxLufsM": -19.0
+    },
+    {
+      "key": "wing_flap",
+      "file": "sfx/wing_flap.mp3",
+      "source": "https://freesound.org/people/shatterstars/sounds/572216/ | https://freesound.org/people/Cerise_Virtuelle/sounds/759529/ | tools/audio/synth.py",
+      "author": "shatterstars (freesound.org) | Cerise_Virtuelle (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "One heavy leathery wing beat (big flap of a dragon wing).",
+      "layers": [
+        {
+          "title": "Freesound #572216 \"Giant Wings Flapping.mp3\" by shatterstars",
+          "author": "shatterstars (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/shatterstars/sounds/572216/",
+          "file": "https://cdn.freesound.org/previews/572/572216_5186268-hq.ogg"
+        },
+        {
+          "title": "Freesound #759529 \"Large flying creature\" by Cerise_Virtuelle",
+          "author": "Cerise_Virtuelle (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Cerise_Virtuelle/sounds/759529/",
+          "file": "https://cdn.freesound.org/previews/759/759529_16331384-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "low thump"
+        }
+      ],
+      "durationSec": 0.51,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -16.2
+    },
+    {
+      "key": "fireball_cast",
+      "file": "sfx/fireball_cast.mp3",
+      "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | tools/audio/synth.py",
+      "author": "TomMusic (tommusic.itch.io) | Steal a Dragon Egg project",
+      "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself) | CC0-1.0",
+      "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Fire whoosh launch - a roaring \"fwoom\" of flame with a low thump.",
+      "layers": [
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Spells/Fireball 1.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Spells/Fireball 1.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "low whomp"
+        }
+      ],
+      "durationSec": 1.151,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -14.1
+    },
+    {
+      "key": "fireball_hit",
+      "file": "sfx/fireball_hit.mp3",
+      "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://tommusic.itch.io/free-fantasy-200-sfx-pack | tools/audio/synth.py",
+      "author": "TomMusic (tommusic.itch.io) | Steal a Dragon Egg project",
+      "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself) | CC0-1.0",
+      "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Fiery explosion on impact: punchy blast, crackle and falling debris with a sub boom.",
+      "layers": [
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Spells/Spell Impact 1.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Spells/Spell Impact 1.ogg"
+        },
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Torch/Torch Impact 2.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Torch/Torch Impact 2.ogg"
+        },
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Spells/Rock Meteor Throw 2.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Spells/Rock Meteor Throw 2.ogg"
+        },
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Spells/Firespray 1.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Spells/Firespray 1.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "sub boom"
+        }
+      ],
+      "durationSec": 1.159,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -13.6
+    },
+    {
+      "key": "frost_breath",
+      "file": "sfx/frost_breath.mp3",
+      "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://freesound.org/people/Breviceps/sounds/479380/ | tools/audio/synth.py",
+      "author": "TomMusic (tommusic.itch.io) | Breviceps (freesound.org) | Steal a Dragon Egg project",
+      "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself) | CC0-1.0",
+      "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Icy breath blast: hissing frosty spray with crackling ice shards.",
+      "layers": [
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Spells/Ice Barrage 2.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Spells/Ice Barrage 2.ogg"
+        },
+        {
+          "title": "Freesound #479380 \"Dragon: Several roars, growls and snarls\" by Breviceps",
+          "author": "Breviceps (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Breviceps/sounds/479380/",
+          "file": "https://cdn.freesound.org/previews/479/479380_9159316-hq.ogg",
+          "part": "hiss 0:46"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "icy glitter"
+        }
+      ],
+      "durationSec": 1.706,
+      "peakDb": -2.32,
+      "loudnessMaxLufsM": -14.0
+    },
+    {
+      "key": "freeze",
+      "file": "sfx/freeze.mp3",
+      "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://kenney.nl/assets/interface-sounds | tools/audio/synth.py",
+      "author": "TomMusic (tommusic.itch.io) | Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself) | CC0-1.0",
+      "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack | https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Player frozen: sharp ice crackle with a glassy ting.",
+      "layers": [
+        {
+          "title": "TomMusic Free Fantasy SFX Pack: Spells/Ice Freeze 1.ogg",
+          "author": "TomMusic (tommusic.itch.io)",
+          "licence": "TomMusic asset licence (royalty-free, commercial use allowed, credit appreciated, no resale/redistribution of the asset itself)",
+          "licenceUrl": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "licenceFile": "assets/licenses/audio-tommusic.txt",
+          "source": "https://tommusic.itch.io/free-fantasy-200-sfx-pack",
+          "localPath": "LoryEngine 1.0/Sound Pack/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Spells/Ice Freeze 1.ogg"
+        },
+        {
+          "title": "Kenney interface-sounds: glass_004.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/interface-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/interface-sounds/Audio/glass_004.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "high bells"
+        }
+      ],
+      "durationSec": 0.828,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -14.7
+    },
+    {
+      "key": "caught",
+      "file": "sfx/caught.mp3",
+      "source": "https://kenney.nl/assets/music-jingles | tools/audio/synth.py | https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney (www.kenney.nl) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Fail sting: tumbling-down pizzicato run ending on a low thud (caught by a dragon).",
+      "layers": [
+        {
+          "title": "Kenney music-jingles: jingles_PIZZI01.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/music-jingles",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/music-jingles/Audio/Pizzicato jingles/jingles_PIZZI01.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "low thud"
+        },
+        {
+          "title": "Kenney impact-sounds: impactSoft_heavy_000.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/impact-sounds",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/impact-sounds/Audio/impactSoft_heavy_000.ogg"
+        }
+      ],
+      "durationSec": 1.867,
+      "peakDb": -2.86,
+      "loudnessMaxLufsM": -12.0
+    },
+    {
+      "key": "win",
+      "file": "sfx/win.mp3",
+      "source": "https://kenney.nl/assets/music-jingles | https://freesound.org/people/plasterbrain/sounds/397353/ | tools/audio/synth.py",
+      "author": "Kenney (www.kenney.nl) | plasterbrain (freesound.org) | Steal a Dragon Egg project",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Triumphant jingle: pizzicato pickup \"da-da-da\" into a full brass \"TA-DA!\" in G major.",
+      "layers": [
+        {
+          "title": "Kenney music-jingles: jingles_PIZZI10.ogg",
+          "author": "Kenney (www.kenney.nl)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-kenney.txt",
+          "source": "https://kenney.nl/assets/music-jingles",
+          "localPath": "LoryEngine 1.0/Sound Pack/Kenney/music-jingles/Audio/Pizzicato jingles/jingles_PIZZI10.ogg"
+        },
+        {
+          "title": "Freesound #397353 \"Tada Fanfare G\" by plasterbrain",
+          "author": "plasterbrain (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/plasterbrain/sounds/397353/",
+          "file": "https://cdn.freesound.org/previews/397/397353_4284968-hq.ogg"
+        },
+        {
+          "title": "Original synthesized layer (tools/audio/synth.py)",
+          "author": "Steal a Dragon Egg project",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-original.txt",
+          "source": "tools/audio/synth.py",
+          "part": "glitter"
+        }
+      ],
+      "durationSec": 2.063,
+      "peakDb": -1.0,
+      "loudnessMaxLufsM": -11.4
+    },
+    {
+      "key": "alarm",
+      "file": "sfx/alarm.mp3",
+      "source": "https://freesound.org/people/v0idation/sounds/368674/ | https://freesound.org/people/qubodup/sounds/814055/",
+      "author": "v0idation (freesound.org) | qubodup (freesound.org)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Danger sting: a dark orchestral villain stab with a thunder crack and a low hit - the dragon has noticed you!",
+      "layers": [
+        {
+          "title": "Freesound #368674 \"FX evil sting.wav\" by v0idation",
+          "author": "v0idation (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/v0idation/sounds/368674/",
+          "file": "https://cdn.freesound.org/previews/368/368674_942821-hq.ogg"
+        },
+        {
+          "title": "Freesound #814055 \"Surprise\" by qubodup",
+          "author": "qubodup (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/qubodup/sounds/814055/",
+          "file": "https://cdn.freesound.org/previews/814/814055_71257-hq.ogg"
+        }
+      ],
+      "durationSec": 2.37,
+      "peakDb": -1.2,
+      "loudnessMaxLufsM": -12.0
+    },
+    {
+      "key": "treadmill",
+      "file": "sfx/treadmill.mp3",
+      "source": "https://freesound.org/people/Richard1052/sounds/585758/",
+      "author": "Richard1052 (freesound.org)",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Treadmill belt running: steady motor hum with a rhythmic belt slap (2 s, loops cleanly).",
+      "layers": [
+        {
+          "title": "Freesound #585758 \"Treadmill\" by Richard1052",
+          "author": "Richard1052 (freesound.org)",
+          "licence": "CC0-1.0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "licenceFile": "assets/licenses/audio-freesound-cc0.txt",
+          "source": "https://freesound.org/people/Richard1052/sounds/585758/",
+          "file": "https://cdn.freesound.org/previews/585/585758_13160753-hq.ogg"
+        }
+      ],
+      "durationSec": 2.0,
+      "peakDb": -4.79,
+      "loudnessMaxLufsM": -22.0
+    },
+    {
+      "key": "base",
+      "file": "music/base.mp3",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400011",
+      "author": "Kevin MacLeod (incompetech.com)",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "\"Monkeys Spinning Monkeys\" (Kevin MacLeod) - 144 BPM, bright flutes over bouncy pizzicato strings; happy, light and humorous, written to loop (base / meadow / home).",
+      "layers": [
+        {
+          "title": "Monkeys Spinning Monkeys",
+          "author": "Kevin MacLeod (incompetech.com)",
+          "licence": "CC-BY-4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "licenceFile": "assets/licenses/audio-incompetech-CC-BY-4.0.txt",
+          "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400011",
+          "file": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Monkeys%20Spinning%20Monkeys.mp3",
+          "isrc": "USUAN1400011"
+        }
+      ],
+      "processing": "loop = original 0.026-125.026 s, playback starts at original 0.026 s; normalised to -16 LUFS (loop), peak-limited to -1 dBFS; the whole piece is the loop (written to loop; pads wrap, 6 ms fade at the seam); MP3 128 kbps",
+      "durationSec": 126.0,
+      "loop": {
+        "start": 0.5,
+        "loopStart": 0.5,
+        "loopEnd": 125.5
+      },
+      "loudnessLufs": -16.0
+    },
+    {
+      "key": "lair",
+      "file": "music/lair.mp3",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100772",
+      "author": "Kevin MacLeod (incompetech.com)",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "\"Sneaky Snitch\" (Kevin MacLeod) - 87 BPM, tiptoeing oboe, snare drum and plucked string quartet; comedic sneaking (dragon lairs).",
+      "layers": [
+        {
+          "title": "Sneaky Snitch",
+          "author": "Kevin MacLeod (incompetech.com)",
+          "licence": "CC-BY-4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "licenceFile": "assets/licenses/audio-incompetech-CC-BY-4.0.txt",
+          "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100772",
+          "file": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Sneaky%20Snitch.mp3",
+          "isrc": "USUAN1100772"
+        }
+      ],
+      "processing": "loop = original 49.666-115.873 s; normalised to -17 LUFS (loop), peak-limited to -1 dBFS; 80 ms seam cross-fade; MP3 128 kbps",
+      "durationSec": 116.873,
+      "loop": {
+        "start": 0.5,
+        "loopStart": 50.16587301587302,
+        "loopEnd": 116.3727664399093
+      },
+      "loudnessLufs": -17.0
+    },
+    {
+      "key": "chase",
+      "file": "music/chase.mp3",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400024",
+      "author": "Kevin MacLeod (incompetech.com)",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "\"Run Amok\" (Kevin MacLeod) - 148 BPM \"super comedy action sequence\": full cartoon orchestra with brass, woodwinds, marimba and percussion (dragon chase). Starts on the pickup into the opening tutti.",
+      "layers": [
+        {
+          "title": "Run Amok",
+          "author": "Kevin MacLeod (incompetech.com)",
+          "licence": "CC-BY-4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "licenceFile": "assets/licenses/audio-incompetech-CC-BY-4.0.txt",
+          "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400024",
+          "file": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Run%20Amok.mp3",
+          "isrc": "USUAN1400024"
+        }
+      ],
+      "processing": "loop = original 42.173-87.578 s, playback starts at original 0.780 s; normalised to -15 LUFS (loop), peak-limited to -1 dBFS; 100 ms seam cross-fade; MP3 128 kbps",
+      "durationSec": 87.798,
+      "loop": {
+        "start": 0.5,
+        "loopStart": 41.892857142857146,
+        "loopEnd": 87.29827664399093
+      },
+      "loudnessLufs": -15.0
+    },
+    {
+      "key": "shop",
+      "file": "music/shop.mp3",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+      "author": "Kevin MacLeod (incompetech.com)",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "notes": "\"Carefree\" (Kevin MacLeod) - 96 BPM, ukulele, guitar, marimba and glockenspiel; calm, happy menu music (shop / wheel / daily panels).",
+      "layers": [
+        {
+          "title": "Carefree",
+          "author": "Kevin MacLeod (incompetech.com)",
+          "licence": "CC-BY-4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "licenceFile": "assets/licenses/audio-incompetech-CC-BY-4.0.txt",
+          "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037",
+          "file": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Carefree.mp3",
+          "isrc": "USUAN1400037"
+        }
+      ],
+      "processing": "loop = original 50.011-110.011 s, playback starts at original 50.011 s; normalised to -17 LUFS (loop), peak-limited to -1 dBFS; 80 ms seam cross-fade; MP3 128 kbps",
+      "durationSec": 61.0,
+      "loop": {
+        "start": 0.5,
+        "loopStart": 0.5,
+        "loopEnd": 60.5
+      },
+      "loudnessLufs": -17.0
+    }
+  ]
+}

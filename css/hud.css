@@ -1,0 +1,670 @@
+/* =========================================================================
+   Steal a Dragon Egg — HUD layout (map-ref-5): round menu buttons top-left,
+   Shop/Index/Slow left column, Wheel/Gift/Eggs/Dragons/Boosts right column,
+   speed + cash + gems bottom-left, boost timers bottom-right, zone banner
+   top-centre, hint centre-bottom, RUN! alarm + vignette, toasts, mobile
+   controls. Body classes: kbd | touch (input mode), is-loading, panel-open,
+   chased, hud-off, toasting (a toast is up). Breakpoints: short landscape
+   (max-height 520px) — narrow (≤ 759 px: squares 480×480 … 534×417 and small
+   landscape phones 568×320 / 640×360) has its own blocks at the end —,
+   portrait phone (max-width 600px), short portrait (≤ 720 px tall).
+   Every viewport class is checked by qa/ui-overlap.cjs (no overlap, no clipping).
+   ========================================================================= */
+
+#ui {
+  position: fixed; inset: 0; z-index: 10;
+  pointer-events: none;
+  --g: 12px;
+  --top: calc(var(--g) + var(--sat));
+  --left: calc(var(--g) + var(--sal));
+  --right: calc(var(--g) + var(--sar));
+  --bottom: calc(var(--g) + var(--sab));
+  --round: 48px;
+  --sq: 68px;
+  --big-w: 178px;
+  --big-h: 58px;
+}
+#ui button, #ui .mob-btn, #ui #joystick { pointer-events: auto; touch-action: manipulation; }
+#ui #joystick { touch-action: none; }
+body.is-loading #ui > :not(#modals):not(#toasts) { visibility: hidden; }
+body.hud-off .hud-tl, body.hud-off .hud-left, body.hud-off .hud-right, body.hud-off .hud-stats, body.hud-off .hud-boosts { opacity: 0; visibility: hidden; transition: opacity .2s, visibility 0s .2s; }
+
+/* ---------- top-left round buttons ---------- */
+.hud-tl { position: absolute; top: var(--top); left: var(--left); display: flex; gap: 8px; }
+.hud-round {
+  position: relative;
+  width: var(--round); height: var(--round);
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0; border-radius: 50%;
+  border: 3px solid var(--ink);
+  background: radial-gradient(circle at 50% 35%, #8c5226, #5a2e10 70%);
+  box-shadow: inset 0 0 0 2px rgba(255, 211, 77, .7), inset 0 3px 0 rgba(255, 230, 180, .35), 0 3px 0 var(--ink), 0 5px 10px rgba(0, 0, 0, .3);
+  color: #fff7df; cursor: pointer;
+  transition: transform .08s ease;
+}
+.hud-round .ic { width: 62%; height: 62%; filter: drop-shadow(0 2px 0 rgba(42, 20, 7, .7)); }
+.hud-round:active { transform: translateY(2px) scale(.96); }
+
+/* ---------- left column ---------- */
+.hud-left {
+  position: absolute; left: var(--left); top: 46%;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: stretch; gap: 12px;
+}
+.hud-big {
+  --c1: #78e64a; --c2: #3fae1f; --c3: #23720f;
+  position: relative;
+  min-width: var(--big-w); height: var(--big-h);
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 14px 4px 64px;
+  border: 3px solid var(--ink); border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .3) 0 45%, rgba(255, 255, 255, 0) 46%),
+    linear-gradient(180deg, var(--c1), var(--c2));
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, .55), inset 0 -5px 0 var(--c3), 0 4px 0 var(--ink), 0 7px 14px rgba(0, 0, 0, .3);
+  color: #fff; cursor: pointer; text-align: left;
+  transition: transform .08s ease;
+}
+.hud-big.hb-blue { --c1: #5cc8ff; --c2: #1f86e6; --c3: #12509c; }
+.hud-big:active { transform: translateY(3px); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .45), inset 0 -2px 0 var(--c3), 0 1px 0 var(--ink); }
+.hud-big .hb-ic { position: absolute; left: 4px; top: 50%; width: 58px; height: 58px; transform: translateY(-56%) rotate(-6deg); }
+.hud-big .hb-ic .ic { width: 100%; height: 100%; filter: drop-shadow(0 3px 0 rgba(42, 20, 7, .65)); }
+.hud-big .hb-lbl { font: 900 25px/1 var(--font); text-shadow: var(--ts); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* the NEW / count badge sits on the corner above the label's end, never on the letters */
+.hud-big .badge { top: -12px; right: -9px; height: 22px; min-width: 22px; font-size: 12px; border-width: 2px; }
+.hud-left > .hud-big + .hud-big { margin-top: 10px; }   /* room for that badge above the Shop button's 3D edge */
+.hud-big:hover .hb-ic { animation: wiggle .5s ease; }
+@keyframes wiggle { 0%, 100% { transform: translateY(-56%) rotate(-6deg); } 30% { transform: translateY(-62%) rotate(6deg); } 60% { transform: translateY(-54%) rotate(-10deg); } }
+
+.hud-slow {
+  display: flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 4px 6px 4px 0;
+  background: none; border: 0; cursor: pointer;
+  align-self: flex-start;
+}
+.hud-slow .sw {
+  position: relative; width: 52px; height: 28px; flex: 0 0 auto;
+  border-radius: 8px; border: 3px solid var(--ink);
+  background: linear-gradient(#5b4433, #3a281b);
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, .45), 0 2px 0 var(--ink);
+}
+.hud-slow .sw i {
+  position: absolute; top: 2px; left: 2px; width: 20px; height: 18px; border-radius: 5px;
+  background: linear-gradient(#f4ecdc, #c7b9a0); border: 2px solid var(--ink);
+  transition: left .15s ease, background .15s ease;
+}
+.hud-slow.on .sw { background: linear-gradient(#7ae04a, #3fae1f); }
+.hud-slow.on .sw i { left: 24px; background: linear-gradient(#fff, #e8ffe0); }
+.hud-slow .sw-lbl { font: 900 17px/1 var(--font); color: #fff; text-shadow: var(--ts-sm); white-space: nowrap; }
+
+/* ---------- right column ---------- */
+.hud-right {
+  position: absolute; right: var(--right); top: 47%;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.hud-sq {
+  --c1: #c08bff; --c2: #7b3fd0; --c3: #4a1f8c;
+  position: relative;
+  width: var(--sq); height: var(--sq);
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 0 4px;
+  border: 3px solid var(--ink); border-radius: 16px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 60%),
+    linear-gradient(180deg, var(--c1), var(--c2));
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, .5), inset 0 -5px 0 var(--c3), 0 4px 0 var(--ink), 0 7px 14px rgba(0, 0, 0, .3);
+  cursor: pointer;
+  transition: transform .08s ease;
+}
+.hud-sq.hs-teal   { --c1: #5fe8d6; --c2: #13a594; --c3: #0b5f56; }
+.hud-sq.hs-red    { --c1: #ff7a63; --c2: #e0321f; --c3: #8c1a0f; }
+.hud-sq.hs-orange { --c1: #ffb84d; --c2: #f07812; --c3: #9a4705; }
+.hud-sq.hs-gold   { --c1: #ffe36b; --c2: #f2ad14; --c3: #a26600; }
+.hud-sq:active { transform: translateY(3px); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .45), inset 0 -2px 0 var(--c3), 0 1px 0 var(--ink); }
+.hud-sq > [data-ui-icon] { width: 74%; height: 74%; display: flex; }
+.hud-sq > [data-ui-icon] .ic { width: 100%; height: 100%; filter: drop-shadow(0 3px 0 rgba(42, 20, 7, .55)); }
+.hud-sq:hover > [data-ui-icon] { animation: hop .45s ease; }
+@keyframes hop { 0%, 100% { transform: none; } 40% { transform: translateY(-5px) scale(1.06); } }
+.hud-sq .hs-lbl {
+  position: absolute; left: 50%; bottom: -9px; transform: translateX(-50%);
+  font: 900 13px/1 var(--font); color: #fff; text-shadow: var(--ts-sm); white-space: nowrap;
+  pointer-events: none;
+}
+.hud-sq .hs-count {
+  position: absolute; left: -8px; top: -8px; z-index: 2;
+  min-width: 26px; height: 24px; padding: 0 6px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px; border: 2.5px solid var(--ink);
+  background: #fff6dc; color: var(--parch-ink);
+  font: 900 13px/1 var(--font);
+  box-shadow: 0 2px 0 var(--ink);
+}
+.hud-sq .hs-count.zero { opacity: .0; }
+
+/* attention pulse (tutorial / new things) */
+.attn { animation: attn 1.1s ease-in-out infinite !important; }
+@keyframes attn { 0%, 100% { filter: none; transform: scale(1); } 50% { filter: brightness(1.25) drop-shadow(0 0 10px #ffe27a); transform: scale(1.07); } }
+
+/* ---------- stats bottom-left ---------- */
+.hud-stats {
+  position: absolute; left: var(--left); bottom: var(--bottom);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+  pointer-events: none;
+}
+.st-speed { display: flex; align-items: center; gap: 6px; font: 900 28px/1 var(--font); color: #9be7ff; text-shadow: var(--ts); }
+.st-speed .ic { width: 40px; height: 40px; filter: drop-shadow(0 2px 0 rgba(42, 20, 7, .7)); }
+.st-cash { font: 900 50px/1.04 var(--font); color: var(--cash); text-shadow: var(--ts-lg); letter-spacing: .01em; transform-origin: left bottom; }
+.st-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.st-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  height: 32px; padding: 0 10px 0 4px; border-radius: 16px;
+  background: rgba(42, 20, 7, .6); border: 2px solid rgba(255, 255, 255, .25);
+  font: 900 18px/1 var(--font); text-shadow: var(--ts-sm); white-space: nowrap;
+}
+.st-chip .ic { width: 28px; height: 28px; }
+.st-gems b { color: #dccbff; }
+.st-income { padding-left: 10px; font-size: 16px; }
+.st-income b { color: var(--cash); }
+.bump { animation: bump .45s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes bump { 0% { transform: scale(1); } 35% { transform: scale(1.14); } 100% { transform: scale(1); } }
+
+/* ---------- active boosts bottom-right ---------- */
+.hud-boosts {
+  position: absolute; right: var(--right); bottom: var(--bottom);
+  display: flex; flex-direction: row-reverse; align-items: flex-end; gap: 8px;
+  /* never reaches the centred hint (max-width min(640px, 100% − 600px)); at most 2 rows (extra timers are clipped —
+     the Boosts panel lists them all) so it never climbs into the right column */
+  max-width: calc(50% - min(320px, 50% - 300px) - var(--right) - 8px);
+  max-height: 152px; overflow: hidden; padding-top: 8px;
+  flex-wrap: wrap-reverse; justify-content: flex-start;
+}
+.bst { flex-shrink: 0; }
+.hud-boosts { padding-right: 6px; margin-right: -6px; }   /* the ×N tag of the right-most timer pokes 4 px out */
+.bst {
+  position: relative; width: 58px; padding: 0 0 2px;
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+  background: none; border: 0; cursor: pointer;
+  animation: bst-in .35s cubic-bezier(.2, 1.5, .4, 1) both;
+}
+.bst .bst-ic {
+  width: 50px; height: 50px; padding: 5px;
+  border-radius: 50%; border: 3px solid var(--ink);
+  background: radial-gradient(circle at 50% 35%, #8f5a2c, #4e280d 75%);
+  box-shadow: inset 0 0 0 2px rgba(255, 211, 77, .75), 0 3px 0 var(--ink);
+}
+.bst .bst-tag {
+  position: absolute; right: -4px; top: -6px;
+  font: 900 16px/1 var(--font); color: var(--gold-1); text-shadow: var(--ts-sm);
+}
+.bst .bst-t { font: 900 14px/1 var(--font); color: #fff; text-shadow: var(--ts-sm); }
+.bst.low .bst-t { color: #ff8a7a; animation: blink .6s steps(2) infinite; }
+.bst.out { animation: bst-out .25s ease both; }
+@keyframes bst-in { from { transform: scale(0) translateY(10px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes bst-out { to { transform: scale(.4); opacity: 0; } }
+@keyframes blink { 50% { opacity: .35; } }
+
+/* ---------- zone banner ---------- */
+.zone-banner {
+  --zone-c: #ffd34d;
+  position: absolute; top: var(--top); left: 50%;
+  transform: translate(-50%, -16px);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-width: 260px; max-width: calc(100% - 2 * 150px);
+  padding: 6px 56px 8px;
+  background: linear-gradient(90deg, rgba(28, 14, 4, 0), rgba(28, 14, 4, .74) 20%, rgba(28, 14, 4, .74) 80%, rgba(28, 14, 4, 0));
+  opacity: 0; visibility: hidden;
+  transition: opacity .3s ease, transform .3s ease, visibility 0s .3s;
+  pointer-events: none;
+}
+.zone-banner::before, .zone-banner::after {
+  content: ''; position: absolute; left: 12%; right: 12%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--zone-c), transparent);
+}
+.zone-banner::before { top: 0; }
+.zone-banner::after { bottom: 0; }
+.zone-banner.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity .3s ease, transform .3s ease; }
+.zone-banner.swap { animation: zb-in .55s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes zb-in { 0% { transform: translate(-50%, -26px) scale(.9); opacity: 0; } 100% { transform: translate(-50%, 0); opacity: 1; } }
+.zone-banner .zb-txt { font: 900 30px/1.1 var(--font); color: #fff; text-shadow: var(--ts); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.zone-banner .zb-emo { font-size: 28px; line-height: 1; filter: drop-shadow(0 2px 0 rgba(0, 0, 0, .5)); }
+.zone-banner .zb-emo:empty { display: none; }
+
+/* ---------- hint ---------- */
+.hint {
+  position: absolute; left: 50%; bottom: calc(var(--bottom) + 18px);
+  transform: translateX(-50%);
+  display: none; align-items: center; gap: 8px;
+  max-width: min(640px, calc(100% - 600px));
+  padding: 8px 18px 9px;
+  border-radius: 16px;
+  background: rgba(28, 14, 4, .78);
+  border: 2px solid rgba(255, 211, 77, .65);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, .35);
+  font: 900 19px/1.25 var(--font); color: #fff; text-shadow: var(--ts-sm);
+  text-align: center;
+}
+.hint.show { display: flex; animation: hint-in .25s ease both; }
+.hint .hint-ic { width: 30px; height: 30px; }
+@keyframes hint-in { from { transform: translate(-50%, 8px); opacity: 0; } to { transform: translateX(-50%); opacity: 1; } }
+
+/* ---------- alarm + vignette ---------- */
+.alarm {
+  position: absolute; left: 50%; top: max(30%, calc(var(--top) + 250px));   /* under the toast column */
+  transform: translateX(-50%);
+  display: none;
+  font: 900 74px/1 var(--font); color: #ff3b2a; letter-spacing: .04em;
+  text-shadow: var(--ts-lg);
+  pointer-events: none;
+}
+.alarm.show { display: block; animation: alarm-pulse .55s ease-in-out infinite alternate; }
+@keyframes alarm-pulse { from { transform: translateX(-50%) scale(1) rotate(-2deg); color: #ff3b2a; } to { transform: translateX(-50%) scale(1.12) rotate(2deg); color: #ff7a3a; } }
+#vignette {
+  --threat: 0;
+  position: absolute; inset: 0; opacity: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 0, 0, 0) 48%, rgba(230, 30, 10, .42) 78%, rgba(150, 0, 0, .78) 100%);
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+#vignette.on { opacity: calc(.6 + var(--threat) * .4); animation: vig .9s ease-in-out infinite alternate; }
+@keyframes vig { from { filter: brightness(.85); } to { filter: brightness(1.15); } }
+
+/* ---------- toasts ---------- */
+#toasts {
+  position: absolute; left: 50%; top: calc(var(--top) + 64px);
+  transform: translateX(-50%);
+  width: min(480px, calc(100% - 2 * 210px));
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  z-index: 70; pointer-events: none;
+}
+.toast {
+  display: flex; align-items: center; gap: 8px;
+  max-width: 100%;
+  padding: 7px 16px 8px 8px;
+  border-radius: 14px; border: 3px solid var(--ink);
+  background: linear-gradient(180deg, var(--parch-1), var(--parch-2));
+  box-shadow: 0 4px 0 var(--ink), 0 8px 16px rgba(0, 0, 0, .25);
+  color: var(--parch-ink); font: 900 16px/1.25 var(--font);
+  pointer-events: auto;
+  animation: toast-in .3s cubic-bezier(.2, 1.5, .4, 1) both;
+}
+.toast .toast-ic {
+  width: 30px; height: 30px; padding: 4px; flex: 0 0 auto;
+  border-radius: 50%; border: 2px solid var(--ink); color: #fff;
+  background: var(--info);
+}
+.toast.t-good .toast-ic { background: var(--good); }
+.toast.t-error .toast-ic { background: var(--bad); }
+.toast.t-gem .toast-ic, .toast.t-cash .toast-ic { background: #fff; padding: 2px; }
+.toast.t-error { background: linear-gradient(180deg, #fff0e8, #ffd2c4); }
+.toast.bump { animation: bump .35s ease; }
+.toast.out { animation: toast-out .25s ease both; }
+@keyframes toast-in { from { transform: translateY(-14px) scale(.9); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes toast-out { to { transform: translateY(-10px); opacity: 0; } }
+
+/* ---------- floating texts ---------- */
+#floaters { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.float-txt {
+  position: absolute; transform: translate(-50%, -50%);
+  font: 900 30px/1 var(--font); color: var(--cash); text-shadow: var(--ts);
+  white-space: nowrap;
+  animation: float-up 1.3s cubic-bezier(.2, .8, .3, 1) forwards;
+}
+.float-txt.gem { color: #d9c6ff; }
+.float-txt.speed { color: #9be7ff; }
+.float-txt.bad { color: #ff5a4a; }
+.float-txt.good { color: #ffe27a; }
+@keyframes float-up {
+  0% { transform: translate(-50%, -30%) scale(.5); opacity: 0; }
+  15% { transform: translate(-50%, -60%) scale(1.15); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx, 0px)), -260%) scale(.95); opacity: 0; }
+}
+
+/* ---------- mobile controls ---------- */
+#mobile { display: none; }
+body.touch #mobile { display: block; }
+body.panel-open #mobile { visibility: hidden; }
+#joystick {
+  position: absolute; left: calc(var(--left) + 6px); bottom: calc(var(--bottom) + 6px);
+  width: 136px; height: 136px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .06) 0 40%, rgba(42, 20, 7, .32) 41%, rgba(42, 20, 7, .42));
+  border: 3px solid rgba(255, 246, 220, .6);
+  box-shadow: inset 0 0 0 2px rgba(42, 20, 7, .35), 0 4px 10px rgba(0, 0, 0, .25);
+}
+#joyKnob {
+  position: absolute; left: 50%; top: 50%; width: 62px; height: 62px; margin: -31px 0 0 -31px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 30%, #fffdf4, #f0e2c0 55%, #c2a875);
+  border: 3px solid var(--ink);
+  box-shadow: 0 4px 0 rgba(42, 20, 7, .6);
+  pointer-events: none;
+}
+#joystick.active { border-color: #fff; }
+.mob-btn {
+  position: absolute;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 3px solid var(--ink);
+  background: radial-gradient(circle at 50% 30%, #ffffff 0, #fff2cf 45%, #e9cf8f);
+  box-shadow: inset 0 -5px 0 rgba(150, 100, 30, .45), 0 4px 0 var(--ink), 0 8px 14px rgba(0, 0, 0, .3);
+  user-select: none; touch-action: none;
+  transition: transform .06s ease;
+}
+.mob-btn .ic { width: 64%; height: 64%; }
+.mob-btn.pressed, .mob-btn:active { transform: translateY(3px) scale(.95); box-shadow: inset 0 -2px 0 rgba(150, 100, 30, .45), 0 1px 0 var(--ink); }
+.mob-action { right: calc(var(--right) + 4px); bottom: calc(var(--bottom) + 8px); width: 88px; height: 88px; background: radial-gradient(circle at 50% 30%, #b6ff8a 0, #5fd23a 50%, #2f9a14); }
+.mob-action.idle { filter: saturate(.25) brightness(.9); opacity: .8; }
+.mob-jump { right: calc(var(--right) + 106px); bottom: calc(var(--bottom) + 6px); width: 68px; height: 68px; background: radial-gradient(circle at 50% 30%, #c9ecff 0, #5cc1ff 50%, #1f7fe6); }
+.mob-sell { right: calc(var(--right) + 14px); bottom: calc(var(--bottom) + 110px); width: 60px; height: 60px; background: radial-gradient(circle at 50% 30%, #fff1b0 0, #ffd34d 50%, #e09b00); }
+.mob-btn.gone { display: none; }
+
+/* touch: stats sit above the joystick, boosts above the action buttons, right column from the top */
+:where(body.touch) .hud-stats { bottom: calc(var(--bottom) + 156px); }
+:where(body.touch) .hud-boosts { bottom: calc(var(--bottom) + 186px); max-width: 50%; flex-wrap: nowrap; }
+:where(body.touch) .hud-right { top: calc(var(--top) + 70px); transform: none; }
+:where(body.touch) .hint { bottom: calc(var(--bottom) + 22px); max-width: calc(100% - 2 * 200px); }
+
+/* ---------- medium screens (tablets, small laptops) ---------- */
+@media (max-width: 1100px), (max-height: 700px) {
+  #ui { --round: 46px; --sq: 60px; --big-w: 160px; --big-h: 52px; }
+  .hud-big .hb-ic { width: 52px; height: 52px; }
+  .hud-big { padding-left: 58px; }
+  .hud-big .hb-lbl { font-size: 22px; }
+  .hud-right { gap: 14px; }
+  .st-cash { font-size: 42px; }
+  .st-speed { font-size: 24px; }
+  .st-speed .ic { width: 34px; height: 34px; }
+  .zone-banner .zb-txt { font-size: 26px; }
+}
+@media (max-width: 900px) {
+  /* keyboard: above the bottom-left stats and two rows of boost timers; touch (tablet portrait): between the joystick
+     and the action buttons, so the boost timers above the buttons never meet it */
+  .hint { bottom: calc(var(--bottom) + 166px); max-width: calc(100% - 32px); }
+  .hud-boosts { max-width: 50%; }
+  :where(body.touch) .hint { bottom: calc(var(--bottom) + 22px); max-width: calc(100% - 2 * 196px); }
+  #toasts { width: min(460px, calc(100% - 2 * 100px)); }
+}
+
+/* ---------- short landscape phones (800×360 …) ---------- */
+@media (max-height: 520px) {
+  #ui { --g: 8px; --round: 44px; --sq: 46px; --big-w: 132px; --big-h: 44px; }
+  .hud-tl { gap: 6px; }
+  .hud-left { top: calc(var(--top) + var(--round) + 10px); transform: none; gap: 8px; }
+  .hud-big { padding-left: 46px; border-radius: 12px; }
+  .hud-big .hb-ic { width: 42px; height: 42px; left: 2px; }
+  .hud-big .hb-lbl { font-size: 18px; }
+  .hud-slow { min-height: 36px; }
+  .hud-slow .sw { width: 44px; height: 24px; }
+  .hud-slow .sw i { width: 16px; height: 14px; }
+  .hud-slow.on .sw i { left: 20px; }
+  .hud-slow .sw-lbl { font-size: 14px; }
+  .hud-right { top: var(--top); transform: none; gap: 8px; }
+  .hud-sq { border-radius: 12px; }
+  .hud-sq .hs-lbl { display: none; }
+  .hud-sq .hs-count { min-width: 20px; height: 19px; font-size: 11px; left: -6px; top: -6px; border-width: 2px; }
+  .hud-sq .badge { top: -7px; right: -7px; min-width: 20px; height: 20px; font-size: 11px; border-width: 2px; }
+  /* stats move to the top bar next to the round buttons */
+  .hud-stats {
+    top: var(--top); bottom: auto;
+    left: calc(var(--left) + var(--nround, 2) * (var(--round) + 8px));
+    flex-direction: row; align-items: center; gap: 8px;
+  }
+  .st-speed { font-size: 19px; order: 2; }
+  .st-speed .ic { width: 26px; height: 26px; }
+  .st-cash { font-size: 30px; order: 1; }
+  .st-row { margin: 0; order: 3; gap: 6px; }
+  .st-chip { height: 28px; font-size: 15px; }
+  .st-chip .ic { width: 24px; height: 24px; }
+  .st-income { font-size: 13px; }
+  .hud-boosts, :where(body.touch) .hud-boosts {
+    right: calc(var(--right) + var(--sq) + 12px); top: var(--top); bottom: auto;
+    flex-direction: row-reverse; align-items: flex-start; flex-wrap: nowrap; max-width: 40%; padding-top: 6px; max-height: none;
+  }
+  .bst { width: 44px; }
+  .bst .bst-ic { width: 38px; height: 38px; padding: 3px; }
+  .bst .bst-t { font-size: 12px; }
+  .bst .bst-tag { font-size: 13px; }
+  .zone-banner { top: calc(var(--top) + 48px); min-width: 200px; padding: 4px 40px 5px; }
+  .zone-banner .zb-txt { font-size: 21px; }
+  .zone-banner .zb-emo { font-size: 20px; }
+  #toasts { top: calc(var(--top) + 84px); width: min(400px, calc(100% - 2 * 150px)); }
+  .toast { font-size: 14px; padding: 5px 12px 6px 6px; }
+  .toast .toast-ic { width: 24px; height: 24px; }
+  .hint { bottom: var(--bottom); max-width: calc(100% - 2 * 190px); font-size: 16px; padding: 6px 14px 7px; }
+  .alarm { top: 26%; font-size: 52px; }
+  #joystick { width: 118px; height: 118px; left: calc(var(--left) + 4px); bottom: calc(var(--bottom) + 2px); }
+  #joyKnob { width: 54px; height: 54px; margin: -27px 0 0 -27px; }
+  .mob-action { width: 76px; height: 76px; bottom: calc(var(--bottom) + 2px); right: calc(var(--right) + 2px); }
+  .mob-jump { width: 62px; height: 62px; right: calc(var(--right) + 90px); bottom: calc(var(--bottom) + 2px); }
+  .mob-sell { width: 56px; height: 56px; right: calc(var(--right) + 162px); bottom: calc(var(--bottom) + 4px); }
+}
+/* very short: hide the slow-mode label */
+@media (max-height: 380px) {
+  .hud-slow .sw-lbl { display: none; }
+}
+
+/* ---------- portrait phones (360×800 …) ---------- */
+@media (max-width: 600px) and (min-height: 521px) {
+  #ui { --g: 8px; --round: 44px; --sq: 52px; --big-w: 128px; --big-h: 46px; }
+  .hud-tl { gap: 6px; }
+  .zone-banner { top: calc(var(--top) + var(--round) + 8px); min-width: 0; max-width: calc(100% - 16px); padding: 4px 36px 5px; }
+  .zone-banner .zb-txt { font-size: 21px; }
+  .zone-banner .zb-emo { font-size: 20px; }
+  .hud-left { top: calc(var(--top) + var(--round) + 50px); transform: none; gap: 8px; }
+  .hud-big { padding-left: 46px; border-radius: 12px; }
+  .hud-big .hb-ic { width: 44px; height: 44px; left: 1px; }
+  .hud-big .hb-lbl { font-size: 18px; }
+  .hud-slow { min-height: 36px; }
+  .hud-slow .sw-lbl { font-size: 14px; }
+  .hud-right, :where(body.touch) .hud-right { top: calc(var(--top) + var(--round) + 50px); transform: none; gap: 12px; }
+  .hud-sq { border-radius: 13px; }
+  .hud-sq .hs-lbl { font-size: 11px; bottom: -8px; }
+  .hud-sq .hs-count { min-width: 21px; height: 20px; font-size: 11px; left: -6px; top: -6px; border-width: 2px; }
+  .hud-sq .badge { top: -7px; right: -7px; min-width: 21px; height: 21px; font-size: 11px; border-width: 2px; }
+  /* stats under the left column (the bottom belongs to the joystick / action buttons) */
+  .hud-stats, :where(body.touch) .hud-stats {
+    top: calc(var(--top) + var(--round) + 206px); bottom: auto;
+    flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 10px; max-width: 240px;
+  }
+  .st-cash { font-size: 34px; order: 1; }
+  .st-speed { font-size: 20px; order: 2; }
+  .st-speed .ic { width: 28px; height: 28px; }
+  .st-row { order: 3; flex-basis: 100%; gap: 6px; }
+  .st-chip { height: 28px; font-size: 15px; }
+  .st-chip .ic { width: 24px; height: 24px; }
+  .st-income { font-size: 13px; }
+  .hud-boosts { max-width: calc(100% - 16px); }
+  :where(body.touch) .hud-boosts { bottom: calc(var(--bottom) + 166px); max-width: calc(100% - 100px); flex-wrap: nowrap; }
+  .bst { width: 50px; }
+  .bst .bst-ic { width: 42px; height: 42px; }
+  #toasts { top: calc(var(--top) + var(--round) + 300px); width: calc(100% - 2 * 66px); }
+  #toasts .toast:nth-last-child(n+3) { display: none; }
+  .toast { font-size: 14px; }
+  .hint { bottom: calc(var(--bottom) + 96px); max-width: calc(100% - 24px); font-size: 16px; }
+  :where(body.touch) .hint { bottom: calc(var(--bottom) + 240px); max-width: calc(100% - 24px); }
+  .alarm { top: 34%; font-size: 56px; }
+  #joystick { width: 124px; height: 124px; }
+  .mob-action { width: 80px; height: 80px; }
+  .mob-jump { width: 64px; height: 64px; right: calc(var(--right) + 94px); }
+  .mob-sell { width: 56px; height: 56px; bottom: calc(var(--bottom) + 98px); right: calc(var(--right) + 14px); }
+}
+
+/* =========================================================================
+   Every aspect ratio (qa/ui-overlap.cjs: 320×568 … 2560×1080, squares,
+   portrait and landscape, touch and keyboard): fixes on top of the blocks
+   above + the small-window layouts.
+   ========================================================================= */
+@keyframes hint-in-flat { from { transform: translateY(8px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* touch: every HUD button is a ≥ 44 px target (the Slow-mode switch row too) */
+body.touch .hud-slow { min-height: 44px; }
+
+/* ---------- short landscape (all widths): RUN! takes the zone banner's slot (the banner yields while
+   chased), the toast column starts under it ---------- */
+@media (max-height: 520px) {
+  /* banner and alarm under the top bar and the timer row, the toasts under them */
+  .zone-banner { top: calc(var(--top) + 64px); }
+  .alarm { top: calc(var(--top) + 64px); font-size: 36px; }
+  body.chased .zone-banner { visibility: hidden; }
+  #toasts { top: calc(var(--top) + 112px); }
+  /* the timer row (top bar, left of the right column) ends before the stats row */
+  .hud-boosts, :where(body.touch) .hud-boosts { max-width: calc(100% - 520px - var(--right) - var(--sq) - 12px); }
+  /* touch: the hint stays between the joystick and Sell */
+  :where(body.touch) .hint { max-width: calc(100% - 2 * 240px); }
+}
+
+/* ---------- portrait phones: RUN! in the zone banner's slot, above the left column ---------- */
+@media (max-width: 600px) and (min-height: 521px) {
+  .alarm { top: calc(var(--top) + var(--round) + 4px); font-size: 34px; }
+  body.chased .zone-banner { visibility: hidden; }
+  .hud-left, :where(body.touch) .hud-left { top: calc(var(--top) + var(--round) + 54px); }
+  .hud-stats, :where(body.touch) .hud-stats { top: calc(var(--top) + var(--round) + 218px); }
+  #toasts { top: calc(var(--top) + var(--round) + 288px); }
+}
+/* tablets in portrait (keyboard): the timers stay clear of the centred teleport button */
+@media (max-width: 900px) and (min-height: 521px) {
+  :where(body.kbd) .hud-boosts { max-width: calc(50% - 150px); }
+}
+
+/* =========================================================================
+   SHORT + NARROW (max-height 520, max-width 759): squares 480×480, 500×500,
+   534×417 and small landscape phones 568×320, 640×360. The centre column
+   runs between the left column (--cL) and the right column (--cR); the
+   zone banner, boost timers, toasts and (touch) the coach card stack in it.
+   ========================================================================= */
+@media (max-height: 520px) and (max-width: 759px) {
+  #ui { --round: 44px; --sq: 44px; --big-w: 140px; --big-h: 44px;
+        --cL: calc(var(--left) + var(--big-w) + 14px); --cR: calc(var(--right) + var(--sq) + 10px); }
+  .hud-tl { gap: 6px; }
+  .hud-left { top: calc(var(--top) + var(--round) + 8px); gap: 6px; }
+  .hud-big { width: var(--big-w); }
+  .hud-big .hb-lbl { font-size: 17px; }
+  .hud-big .badge { top: -11px; right: -8px; height: 20px; min-width: 20px; font-size: 11px; }
+  .hud-left { gap: 8px; }
+  .hud-right { gap: 10px; }   /* the count / ready badges (−5 px) stay clear of the 3D edge of the button above */
+  .hud-sq .hs-count { left: -5px; top: -5px; }
+  .hud-sq .badge { top: -5px; right: -5px; }
+  /* centre column: banner, boost timers, toasts */
+  .zone-banner { left: calc(50% + (var(--cL) - var(--cR)) / 2); max-width: calc(100% - var(--cL) - var(--cR)); min-width: 0; padding: 4px 26px 5px; }
+  .zone-banner .zb-txt { font-size: 20px; }
+  .zone-banner .zb-emo { font-size: 19px; }
+  .alarm { left: calc(50% + (var(--cL) - var(--cR)) / 2); font-size: 34px; }
+  .hud-boosts, :where(body.touch) .hud-boosts {
+    right: var(--cR); bottom: auto; max-width: calc(100% - var(--cL) - var(--cR));
+    flex-direction: row-reverse; flex-wrap: nowrap; align-items: flex-start; max-height: none; padding-top: 6px;
+  }
+  #toasts { left: calc(50% + (var(--cL) - var(--cR)) / 2); width: calc(100% - var(--cL) - var(--cR)); }
+  #toasts .toast:nth-last-child(n+3) { display: none; }
+  .toast { font-size: 13px; }
+  /* coach card: keyboard → bottom centre (no controls there); touch → the centre column (the zone banner yields) */
+  body.touch.tut-on .zone-banner { visibility: hidden; }
+  .hint, :where(body.touch) .hint { max-width: calc(100% - 24px); font-size: 14px; }
+}
+
+/* squares and near-squares (≥ 400 px tall): the stats take two rows in the top bar right of the left column,
+   the banner, timers and toasts go under them; touch: Sell above Action, the hint / teleport button in the
+   gap between the joystick and Jump */
+@media (max-height: 520px) and (min-height: 400px) and (max-width: 759px) {
+  #ui { --tut-top-n: calc(var(--top) + 78px); }
+  .hud-stats {
+    top: var(--top); left: calc(var(--left) + var(--nround, 2) * (var(--round) + 7px));
+    max-width: calc(100% - var(--left) - var(--nround, 2) * (var(--round) + 7px) - var(--cR));
+    flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 8px; row-gap: 4px;
+  }
+  .st-cash { font-size: 30px; }
+  .st-row { flex-basis: 100%; }
+  .hud-left { top: calc(var(--top) + 80px); }
+  .zone-banner { top: calc(var(--top) + 78px); }
+  .alarm { top: calc(var(--top) + 76px); }
+  .hud-boosts, :where(body.touch) .hud-boosts { top: calc(var(--top) + 112px); }
+  /* toasts stop left of Sell (touch: it sits above Action at the right edge) */
+  #toasts { top: calc(var(--top) + 174px); left: calc(50% + (var(--cL) - var(--right) - 84px) / 2); width: calc(100% - var(--cL) - var(--right) - 84px); }
+  :where(body.touch) .mob-action { width: 76px; height: 76px; right: calc(var(--right) + 2px); bottom: calc(var(--bottom) + 2px); }
+  :where(body.touch) .mob-jump { width: 62px; height: 62px; right: calc(var(--right) + 86px); bottom: calc(var(--bottom) + 2px); }
+  :where(body.touch) .mob-sell { width: 56px; height: 56px; right: calc(var(--right) + 12px); bottom: calc(var(--bottom) + 86px); }
+  :where(body.touch) .hint {
+    left: calc(var(--left) + 130px); right: calc(var(--right) + 156px); bottom: var(--bottom);
+    width: fit-content; margin: 0 auto; max-width: none; transform: none;
+  }
+  :where(body.touch) .hint.show { animation-name: hint-in-flat; }
+}
+
+/* small landscape phones (< 400 px tall): one compact stats row in the top bar, the timers under it, then the
+   banner and one toast; touch: the hint / teleport button between the joystick and Sell */
+@media (max-height: 399px) and (max-width: 759px) {
+  #ui { --tut-top-n: calc(var(--top) + 48px); }
+  .hud-stats { left: calc(var(--left) + var(--nround, 2) * (var(--round) + 7px)); gap: 6px; }
+  .st-cash { font-size: 26px; }
+  .st-speed { font-size: 17px; }
+  .st-speed .ic { width: 22px; height: 22px; }
+  .st-chip { height: 26px; font-size: 14px; padding: 0 8px 0 3px; }
+  .st-chip .ic { width: 22px; height: 22px; }
+  .st-income { font-size: 12px; padding-left: 8px; }
+  .hud-boosts, :where(body.touch) .hud-boosts { top: calc(var(--top) + 46px); }
+  .zone-banner { top: calc(var(--top) + 104px); }
+  .zone-banner .zb-txt { font-size: 18px; }
+  .alarm { top: calc(var(--top) + 102px); font-size: 30px; }
+  #toasts { top: calc(var(--top) + 140px); }
+  #toasts .toast:nth-last-child(n+2) { display: none; }
+  /* the shortest screens: badges only slightly raised, tighter column (it ends above the joystick) */
+  .hud-left { top: calc(var(--top) + var(--round) + 8px); gap: 6px; }
+  .hud-left > .hud-big + .hud-big { margin-top: 6px; }
+  .hud-big .badge { top: -6px; height: 18px; min-width: 18px; padding: 0 4px; font-size: 10px; }
+  #joystick { width: 96px; height: 96px; }
+  #joyKnob { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+  :where(body.touch) .hint {
+    left: calc(var(--left) + 116px); right: calc(var(--right) + 228px); bottom: var(--bottom);
+    width: fit-content; margin: 0 auto; max-width: none; transform: none;
+  }
+  :where(body.touch) .hint.show { animation-name: hint-in-flat; }
+}
+/* very short touch screens: the right column becomes two columns so it ends above the action button */
+@media (max-height: 343px) and (max-width: 759px) {
+  body.touch #ui { --cR: calc(var(--right) + 2 * var(--sq) + 16px); }
+  body.touch .hud-right { display: grid; grid-template-columns: repeat(2, var(--sq)); gap: 10px 6px; justify-items: center; }
+}
+
+/* =========================================================================
+   SHORT PORTRAIT (portrait ≤ 600 wide, 521–720 tall: 320×568, 360×640,
+   600×600): the right column starts at the top (no labels), the cash sits in
+   the top row and the speed / gems / income chips under the round buttons,
+   then the zone banner and the left column; the hint (or the newest toast)
+   and the boost timers use the band above the touch controls.
+   ========================================================================= */
+@media (max-width: 600px) and (min-height: 521px) and (max-height: 720px) {
+  #ui { --round: 44px; --sq: 44px; --big-w: 128px; --big-h: 44px; --cR: calc(var(--right) + var(--sq) + 8px); }
+  .hud-right, :where(body.touch) .hud-right { top: var(--top); gap: 10px; }
+  .hud-sq .hs-lbl { display: none; }
+  .hud-sq .hs-count { left: -5px; top: -5px; }
+  .hud-sq .badge { top: -5px; right: -5px; }
+  .hud-stats, :where(body.touch) .hud-stats {
+    top: var(--top); left: var(--left); width: calc(100% - var(--left) - var(--cR) - 4px); max-width: none;
+    flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 6px; row-gap: 4px;
+  }
+  .st-cash { order: 1; flex: 1 1 calc(100% - var(--nround, 2) * (var(--round) + 7px)); margin-left: calc(var(--nround, 2) * (var(--round) + 7px)); font-size: 30px; line-height: 44px; }
+  .st-speed { order: 2; font-size: 17px; }
+  .st-speed .ic { width: 22px; height: 22px; }
+  .st-row { order: 3; flex-basis: auto; gap: 6px; margin: 0; }
+  .st-chip { height: 26px; font-size: 14px; padding: 0 8px 0 3px; }
+  .st-chip .ic { width: 22px; height: 22px; }
+  .st-income { font-size: 12px; padding-left: 8px; }
+  .zone-banner { top: calc(var(--top) + 80px); left: calc(50% + (var(--left) - var(--cR)) / 2); max-width: calc(100% - var(--left) - var(--cR)); }
+  .alarm { top: calc(var(--top) + 78px); left: calc(50% + (var(--left) - var(--cR)) / 2); font-size: 30px; }
+  .hud-left { top: calc(var(--top) + 120px); gap: 6px; }
+  .hud-left > .hud-big + .hud-big { margin-top: 6px; }
+  .hud-big .badge { top: -6px; right: -8px; height: 18px; min-width: 18px; padding: 0 4px; font-size: 10px; }
+  :where(body.touch) .mob-sell { bottom: calc(var(--bottom) + 92px); }
+  /* the hint and the toasts share one slot under the left column (the hint yields while a toast is up) */
+  .hint, :where(body.touch) .hint {
+    top: calc(var(--top) + 278px); bottom: auto; left: var(--left); right: var(--cR);
+    width: fit-content; margin: 0 auto; max-width: none; transform: none; font-size: 14px; padding: 5px 12px 6px;
+  }
+  .hint.show { animation-name: hint-in-flat; }
+  body.toasting #hint { visibility: hidden; }
+  #toasts { top: calc(var(--top) + 278px); left: var(--left); right: var(--cR); width: auto; transform: none; }
+  #toasts .toast:nth-last-child(n+2) { display: none; }
+  .toast { font-size: 13px; padding: 5px 12px 6px 6px; }
+  /* touch: timers right of the teleport button, both above the controls */
+  :where(body.touch) .hud-boosts { bottom: calc(var(--bottom) + 156px); max-width: calc(100% - 160px); padding-top: 6px; }
+  :where(body.kbd) .hud-boosts { flex-wrap: nowrap; }
+}

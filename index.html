@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#2b1407">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" href="assets/ui/render/egg-meadow.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/nunito-900.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/ui/concept/base-hatching-bg-blur.jpg">
+<title>Укради яйцо дракона</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/hud.css">
+<link rel="stylesheet" href="css/panels.css">
+<link rel="stylesheet" href="css/shop.css">
+<link rel="stylesheet" href="css/daily.css">
+<link rel="stylesheet" href="css/wheel.css">
+<link rel="stylesheet" href="css/tutorial.css">
+<link rel="stylesheet" href="css/collection.css">
+<link rel="stylesheet" href="css/misc.css">
+<link rel="stylesheet" href="css/offers.css">
+</head>
+<body class="kbd is-loading">
+
+<canvas id="scene"></canvas>
+
+<!-- ================= HUD + UI layer (SE.UI, js/ui/core.js) ================= -->
+<div id="ui">
+  <div id="vignette" aria-hidden="true"></div>
+
+  <!-- top-left: round menu buttons -->
+  <div id="hudTL" class="hud-tl">
+    <button class="hud-round" id="btnMenu" type="button" data-i18n-title="hud.menu"><span data-ui-icon="svg/menu"></span></button>
+    <button class="hud-round" id="btnSettings" type="button" data-i18n-title="hud.settings"><span data-ui-icon="gear"></span></button>
+    <button class="hud-round" id="btnLeaders" type="button" data-i18n-title="hud.records" hidden><span data-ui-icon="trophy"></span></button>
+  </div>
+
+  <!-- left column: Shop / Index / Slow mode -->
+  <div id="hudLeft" class="hud-left">
+    <button class="hud-big hb-green" id="btnShop" type="button">
+      <span class="hb-ic" data-ui-icon="shop"></span><span class="hb-lbl" data-i18n="hud.shop">Магазин</span>
+      <span class="badge" id="shopBadge" hidden></span>
+    </button>
+    <button class="hud-big hb-blue" id="btnIndex" type="button">
+      <span class="hb-ic" data-ui-icon="book"></span><span class="hb-lbl" data-i18n="hud.index">Индекс</span>
+      <span class="badge" id="indexBadge" hidden></span>
+    </button>
+    <button class="hud-slow" id="slowSwitch" type="button" role="switch" aria-checked="false">
+      <span class="sw"><i></i></span><span class="sw-lbl" data-i18n="hud.slow">Медленно</span>
+    </button>
+  </div>
+
+  <!-- right column: Wheel / Daily / Eggs / Dragons / Boosts -->
+  <div id="hudRight" class="hud-right">
+    <button class="hud-sq hs-purple" id="btnWheel" type="button" data-i18n-title="hud.wheel">
+      <span data-ui-icon="prize-wheel"></span><span class="hs-lbl" data-i18n="hud.wheel">Колесо</span>
+      <span class="badge" id="wheelBadge" hidden>!</span>
+    </button>
+    <button class="hud-sq hs-teal" id="btnDaily" type="button" data-i18n-title="hud.daily">
+      <span data-ui-icon="gift"></span><span class="hs-lbl" data-i18n="hud.daily">Подарок</span>
+      <span class="badge" id="dailyBadge" hidden>!</span>
+    </button>
+    <button class="hud-sq hs-red" id="btnEggs" type="button" data-i18n-title="hud.eggs">
+      <span data-ui-icon="egg"></span><span class="hs-lbl" data-i18n="hud.eggs">Яйца</span>
+      <span class="hs-count" id="eggCount">0</span>
+      <span class="badge badge-good" id="eggsBadge" hidden></span>
+    </button>
+    <button class="hud-sq hs-orange" id="btnDragons" type="button" data-i18n-title="hud.dragons">
+      <span data-ui-icon="paw"></span><span class="hs-lbl" data-i18n="hud.dragons">Драконы</span>
+      <span class="hs-count" id="dragonCount">0</span>
+    </button>
+    <button class="hud-sq hs-gold" id="btnBoosts" type="button" data-i18n-title="hud.boosts">
+      <span data-ui-icon="lightning"></span><span class="hs-lbl" data-i18n="hud.boosts">Бусты</span>
+      <span class="badge badge-rw" id="boostsBadge" hidden></span>
+    </button>
+  </div>
+
+  <!-- bottom-left: speed, cash, gems, income -->
+  <div id="hudStats" class="hud-stats">
+    <div class="st-speed" id="statSpeedBox" data-i18n-title="hud.speed"><span data-ui-icon="shoe"></span><b id="statSpeed">20</b></div>
+    <div class="st-cash" id="statMoneyBox"><b id="statMoney">$0</b></div>
+    <div class="st-row">
+      <div class="st-chip st-gems" id="statGemsBox" data-i18n-title="cur.gems"><span data-ui-icon="render/gem"></span><b id="statGems">0</b></div>
+      <div class="st-chip st-income" id="incomeChip"><b id="statIncome">+$0/с</b></div>
+    </div>
+  </div>
+
+  <!-- bottom-right: active boosts -->
+  <div id="boostList" class="hud-boosts" aria-live="off"></div>
+
+  <!-- top-centre: zone banner -->
+  <div id="zoneBanner" class="zone-banner" aria-live="polite"><span class="zb-txt" id="zoneText"></span><span class="zb-emo" id="zoneEmoji"></span></div>
+
+  <!-- centre-bottom: context hint -->
+  <div id="hint" class="hint" aria-live="polite"></div>
+
+  <!-- chase alarm -->
+  <div id="alarm" class="alarm" aria-live="assertive"><span data-i18n="hud.run">БЕГИ!</span></div>
+
+  <!-- floating "+$120" texts -->
+  <div id="floaters" aria-hidden="true"></div>
+
+  <!-- mobile controls (ids used by SE.Input in js/player.js) -->
+  <div id="mobile">
+    <div id="joystick" data-input="joystick"><div id="joyKnob" class="joy-knob"></div></div>
+    <div class="mob-btn mob-sell" id="btnAction2" role="button" data-i18n-aria="hud.sellAll"><span data-ui-icon="money-bag"></span></div>
+    <div class="mob-btn mob-jump" id="btnJump" role="button" data-i18n-aria="hud.jump"><span data-ui-icon="jump-arrow"></span></div>
+    <div class="mob-btn mob-action" id="btnAction" role="button" data-i18n-aria="hud.action"><span data-ui-icon="interact-hand"></span></div>
+  </div>
+
+  <!-- toasts + panels -->
+  <div id="toasts" aria-live="polite"></div>
+  <div id="modals"></div>
+</div>
+
+<!-- ================= Pause menu ================= -->
+<div id="pause" class="overlay" role="dialog" aria-modal="true" aria-labelledby="pauseTitle">
+  <div class="pause-card wood-card">
+    <div class="ribbon"><span id="pauseTitle" data-i18n="pause.title">Пауза</span></div>
+    <div class="pause-btns">
+      <button class="ui-btn green big" id="btnResume" type="button"><span data-ui-icon="svg/play"></span><span data-i18n="pause.resume">Продолжить</span></button>
+      <button class="ui-btn blue" id="btnHowTo" type="button"><span data-ui-icon="question"></span><span data-i18n="pause.howto">Как играть</span></button>
+      <button class="ui-btn gold" id="btnPauseSettings" type="button"><span data-ui-icon="gear"></span><span data-i18n="pause.settings">Настройки</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= Waiting for an ad ================= -->
+<div id="rwWait" class="overlay" aria-live="assertive">
+  <div class="adwait-card"><span class="spinner"></span><span data-i18n="ui.adWait">Реклама загружается…</span></div>
+</div>
+
+<!-- ================= Loading screen ================= -->
+<div id="loading" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+  <div class="ld-bg"></div>
+  <div class="ld-main">
+    <div class="ld-logo">
+      <img class="ld-dragon" src="assets/ui/render/dragon-meadow.png" alt="" draggable="false">
+      <div class="ld-title" id="loadTitle" data-i18n="game.title">Укради яйцо дракона</div>
+    </div>
+    <div class="ld-egg" id="loadEgg">
+      <div class="ld-egg-shell"><i class="ld-egg-fill" id="loadFill"></i><i class="ld-egg-shine"></i></div>
+      <b class="ld-pct" id="loadPct">0%</b>
+    </div>
+    <div class="ld-bar" id="loadBar"><i></i></div>
+    <div class="ld-stage" id="loadStage" data-i18n="loading.title">Загрузка…</div>
+    <div class="ld-error" id="loadError" hidden>
+      <p id="loadErrorText"></p>
+      <button class="ui-btn green big" id="btnRetry" type="button"><span data-ui-icon="svg/refresh"></span><span data-i18n="btn.retry">Повторить</span></button>
+    </div>
+  </div>
+  <div class="ld-tip" id="loadTip"></div>
+</div>
+
+<script src="https://games.pikabu.ru/sdk/sdk.js"></script>
+<script defer src="js/lib/three.min.js"></script>
+<script defer src="js/lib/BufferGeometryUtils.js"></script>
+<script defer src="js/lib/GLTFLoader.js"></script>
+<script defer src="js/config.js"></script>
+<script defer src="js/i18n.js"></script>
+<script defer src="js/utils.js"></script>
+<script defer src="js/icons.js"></script>
+<script defer src="js/platform/pikabu.js"></script>
+<script defer src="js/audio.js"></script>
+<script defer src="js/assets.js"></script>
+<script defer src="js/fx.js"></script>
+<script defer src="js/data/dragons.js"></script>
+<script defer src="js/data/cosmetics.js"></script>
+<script defer src="js/economy.js"></script>
+<script defer src="js/models.js"></script>
+<script defer src="js/models-env.js"></script>
+<script defer src="js/models-dragon.js"></script>
+<script defer src="js/cosmetics.js"></script>
+<script defer src="js/world.js"></script>
+<script defer src="js/dragons.js"></script>
+<script defer src="js/player.js"></script>
+<script defer src="js/bots.js"></script>
+<script defer src="js/ads.js"></script>
+<script defer src="js/ad-pads.js"></script>
+<script defer src="js/ui/core.js"></script>
+<script defer src="js/ui/shop.js"></script>
+<script defer src="js/ui/daily.js"></script>
+<script defer src="js/ui/wheel.js"></script>
+<script defer src="js/ui/collection.js"></script>
+<script defer src="js/ui/misc.js"></script>
+<script defer src="js/ui/offers.js"></script>
+<script defer src="js/tutorial.js"></script>
+<script defer src="js/game.js"></script>
+</body>
+</html>
