@@ -35,12 +35,12 @@
 
   SE.Config = {
     GAME_ID: 'steal-a-dragon-egg',
-    VERSION: '1.0.2',
+    VERSION: '1.0.3',
     PLATFORM: "pikabu",              // @build PLATFORM
     LANG: "ru",                     // @build LANG
     DEBUG: false,           // @build DEBUG
     MOCK_ADS: false,      // @build MOCK_ADS
     ADS: true,                      // @build ADS
-    BUILD: "pikabu 1.0.2 2026-11-05T17:51Z"                    // @build BUILD
+    BUILD: "pikabu 1.0.3 2026-11-10T12:04Z"                    // @build BUILD
   };
 })(window);
